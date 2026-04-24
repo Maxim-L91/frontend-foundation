@@ -25,4 +25,22 @@ export default defineConfig({
       },
     ],
   },
+
+  css: {
+    modules: {
+      // Поведение CSS-модулей (используется редко, но пусть будет)
+      scopeBehaviour: 'local',
+      localsConvention: 'camelCaseOnly',
+    },
+    preprocessorOptions: {
+      scss: {
+        // Автоматически подключаем helpers во все SCSS-файлы
+        additionalData: `
+          @use '@/styles/helpers' as *;
+        `,
+        // Убираем варнинги от старого API
+        silenceDeprecations: ['legacy-js-api'],
+      },
+    },
+  },
 })
