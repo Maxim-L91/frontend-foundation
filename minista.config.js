@@ -15,4 +15,14 @@ export default defineConfig({
 
   // Папка для сборки (туда складывается результат)
   out: 'dist',
+
+  resolve: {
+    // Настройка алиаса @/ → src/
+    alias: [
+      {
+        find: '@/',
+        replacement: path.resolve('src') + '/',
+      },
+    ],
+  },
 })
