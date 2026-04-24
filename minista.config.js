@@ -43,4 +43,12 @@ export default defineConfig({
       },
     },
   },
+
+  plugins: [
+    pluginSsg(),
+    pluginBundle(),
+    pluginSprite({
+      config: svgoConfig,
+    }),
+  ],
 })
