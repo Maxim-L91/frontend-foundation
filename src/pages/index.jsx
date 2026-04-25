@@ -1,7 +1,9 @@
-export default function () {
+import '@/styles/index.js'
+
+export default () => {
   return (
     <>
-      <h1>Hello!</h1>
+      
     </>
   )
 }
