@@ -1,5 +1,13 @@
 .icon {
   display: inline-block;
-  fill: currentColor;
-  stroke: currentColor;
+  
+  &--fill {
+    fill: currentColor;
+    stroke: none;
+  }
+
+  &--stroke {
+    fill: none;
+    stroke: currentColor;
+  }
 }

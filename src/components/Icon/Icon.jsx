@@ -10,24 +10,40 @@ export default (props) => {
     color = "currentColor",
     size = 24,
     ariaLabel,
+    variant,
   } = props
 
-  const iconId = ICONS[name]
+  const icon = ICONS[name]
 
-  if (!iconId) {
+  if (!icon) {
     console.warn(`[Icon] unknown icon: ${name}`)
     return null
   }
 
+  const { id: iconName } = icon
+
+  const defaultVariant = icon.variant ?? "stroke"
+  const finalVariant = variant || defaultVariant
+
+  const isFill = finalVariant === "fill"
+
   return (
     <Sprite
-      src={`/src/assets/icons/${iconId}.svg`}
-      className={clsx("icon", className)}
+      src={`/src/assets/icons/${iconName}.svg`}
+      className={clsx(
+        "icon", 
+        className,
+        {
+          "icon--fill": isFill,
+          "icon--stroke": !isFill,
+        }
+      )}
       style={{ 
         color,
         width: size,
         height: size,
       }}
+      aria-label={ariaLabel}
       aria-hidden={!ariaLabel}
       role={ariaLabel ? "img" : "presentation"}
     />
