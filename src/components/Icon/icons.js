@@ -1,6 +1,4 @@
 export const ICONS = {
-  donut: 'donut',
-  cheese: 'cheese',
-  hatChef: 'hat-chef',
-  grater: 'grater',
+  donuts: { id: 'donuts', variant: 'fill' },
+  cloud: { id: 'cloud', variant: 'stroke' },
 }
