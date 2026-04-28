@@ -1,4 +1,4 @@
-import '@/styles/index.js'
+import '@/styles/'
 
 export default () => {
   return (
