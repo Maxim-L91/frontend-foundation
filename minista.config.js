@@ -1,4 +1,4 @@
-import { defineConfig, pluginSsg, pluginBundle, pluginSprite } from "minista"
+import { defineConfig, pluginSsg, pluginBundle, pluginSprite, pluginImage } from "minista"
 import svgoConfig from "./svgo.config.mjs"
 import path from 'path'
 
@@ -50,5 +50,6 @@ export default defineConfig({
     pluginSprite({
       config: svgoConfig,
     }),
+    pluginImage(),
   ],
 })
