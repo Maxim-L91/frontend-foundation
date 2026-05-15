@@ -42,6 +42,13 @@
   - Это библиотека, которая помогает удобно и автоматически собирать **CSS** классы в **className**
   - [Ссылка на документацию](https://www.npmjs.com/package/clsx)
 
+5. [**StyleLint**](#stylelint) (v17.11.0)
+  - Поддерживает единый стиль кода
+  - Помогает избегать ошибок
+  - Помогает соблюдать архитектуру CSS
+  - Помогает делать код предсказуемым и читаемым для команды
+  - [Ссылка на документацию](https://stylelint.io/)
+
 ### Minista
 - `npm run dev` — Запустит локальный сервер в режиме разработки
 - `npm run build` — Создаст папку **dist** с подготовленными файлами для хостинга
@@ -99,3 +106,157 @@ export const ICONS = {
 #### Поведение по умолчанию
 
 Если variant не указан в icons.js, иконка считается stroke:
+
+### Stylelint
+
+#### Запуск Линтера
+
+**Проверка файлов**
+```bash
+npx stylelint "src/**/*.{css,scss}"
+```
+
+**Автоисправление**
+```bash
+npx stylelint "src/**/*.{css,scss}" --fix
+```
+
+#### Основные правила проекта
+
+1. Подключение файлов с помощью директивы **@import** запрещено.
+  - Устаревший подход
+  - Используйте **@use** и **@forward**
+
+**Правило**
+```js
+'at-rule-disallowed-list': ['import']
+```
+
+2. Имена классов
+
+**Запрещено использовать camelCase нотацию.**
+
+Например:
+```scss
+.BigButton {}
+.cardTitle {}
+```
+
+**Правило**
+```js
+'selector-class-pattern': '^[a-z0-9\\-_]+$'
+```
+
+3. CSS и SCSS переменные
+
+SCSS и CSS переменные должны использовать lowercase и kebab-case naming.
+```scss
+--main-color: #ffffff;
+$main-color: #ffffff;
+```
+
+**Правило для CSS переменных**
+```js
+'custom-property-pattern': '^[a-z][a-z0-9-]*$'
+```
+
+> [!IMPORTANT]
+> CSS переменные должны располагаться перед обычными CSS свойствами внутри блока.
+> В противном случае будет ошибка
+
+**Правило для SCSS переменных**
+```js
+'scss/dollar-variable-pattern': '^[a-z][a-z0-9-]*$',
+```
+
+4. Цвета
+
+  - **HEX** использовать в полном формате — `color: #ffffff;`
+  - `color: #fff;` — Вызовет ошибку
+
+    **Правило**  
+    ```js
+    'color-hex-length': 'long'
+    ```  
+  - Именованные цвета запрещены. Например, `color: red`.
+
+    **Правило**
+    ```js
+    'color-named': 'never',
+    ```
+5. Шрифты
+Название шрифта нужно помещать в двойные кавычки
+
+**Правило**
+```js
+'font-family-name-quotes': 'always-unless-keyword'
+```
+
+6. Для значения `0` единицы измерения не указываются. Кроме CSS и SCSS переменных
+
+7. Использование **!important** запрещено
+
+Если без **!important** не обойтись, это правило можно отключить с помощью комментария:
+
+- Отключение правила для одной строки
+
+```scss
+.element {
+  /* stylelint-disable-next-line declaration-no-important */
+  color: red !important;
+}
+```
+
+- Отключение правила для целого блока кода
+
+```scss
+/* stylelint-disable declaration-no-important */
+.utility-class-1 { display: none !important; }
+.utility-class-2 { margin: 0 !important; }
+/* stylelint-enable declaration-no-important */
+```
+
+8. Порядок свойств
+
+Свойства должны идти в определённом порядке.
+
+**Свойства сгруппированы логически:**
+  1. Positioning
+  2. Layout
+  3. Box model
+  4. Typography
+  5. Visual
+  6. Effects
+  7. Misc
+
+Пример:
+```scss
+.card {
+  // CSS variables
+  --card-padding: 20px;
+  
+  // Positioning
+  position: relative;
+  z-index: 1;
+
+  // Layout
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  // Box model
+  width: 100%;
+  padding: 20px;
+
+  // Typography
+  font-size: 16px;
+  color: #ffffff;
+
+  // Visual
+  background-color: #000000;
+  border-radius: 12px;
+
+  // Effects
+  transition: transform 0.3s ease;
+}
+```
