@@ -49,6 +49,13 @@
   - Помогает делать код предсказуемым и читаемым для команды
   - [Ссылка на документацию](https://stylelint.io/)
 
+6. [**ESLint**](#eslint) (v9.30.1)
+  - Помогает находить ошибки
+  - Поддерживает единый стиль кода
+  - Избегает потенциальных багов
+  - Делает код более понятным и аккуратным
+  - [Ссылка на документацию](https://eslint.org/)
+
 ### Minista
 - `npm run dev` — Запустит локальный сервер в режиме разработки
 - `npm run build` — Создаст папку **dist** с подготовленными файлами для хостинга
@@ -276,3 +283,238 @@ $main-color: #ffffff;
   transition: transform 0.3s ease;
 }
 ```
+
+### ESLint
+
+**ESLint** — это инструмент для анализа JavaScript-кода.
+
+В данном шаблоне ESLint проверяет:
+  - JavaScript
+  - JSX
+  - React-компоненты
+  - Accessibility (доступность интерфейсов)
+  - Потенциально опасный код
+  - Единый стиль написания
+
+#### Запуск ESLint
+
+**Проверка проекта:**
+```bash
+npm run lint
+```
+
+**Автоматическое исправление:**
+```bash
+npm run lint:fix
+```
+
+#### Используемые плагины
+
+##### REACT
+
+Плагин добавляет правила для React и JSX.
+
+**Подключение плагина в файле конфига**
+```js
+import reactPlugin from 'eslint-plugin-react'
+```
+
+[Документация плагина](https://github.com/jsx-eslint/eslint-plugin-react?utm_source=chatgpt.com)
+
+##### JSX Accessibility
+
+Плагин проверяет доступность интерфейсов.
+
+**Например:**
+- наличие alt у изображений
+- доступность элементов с клавиатуры
+- корректность медиа-элементов
+
+**Подключение плагина в файле конфига**
+```js
+import jsxA11yPlugin from 'eslint-plugin-jsx-a11y'
+```
+
+[Документация плагина](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y?utm_source=chatgpt.com)
+
+#### Настройки JavaScript и JSX
+
+##### Babel Parser
+
+**Фрагмент настройки:**
+```js
+parser: babelParser
+```
+
+**Babel Parser** помогает **ESLint** корректно анализировать современный **JavaScript** и **JSX-синтаксис**.
+
+##### JSX
+
+Включает поддержку JSX.
+
+**Фрагмент настройки:**
+```js
+ecmaFeatures: {
+  jsx: true,
+}
+```
+
+##### ECMAScript
+
+Разрешает использовать современный JavaScript.
+
+**Фрагмент настройки:**
+```js
+ecmaVersion: 'latest'
+```
+
+#### Основные правила проекта
+
+##### No-console
+
+Предупреждает об использовании `console.log()`, потому что `console.log()` часто забывают удалить перед production.
+
+**Фрагмент настройки:**
+
+```js
+'no-console': ['warn', { allow: ['warn', 'error'] }]
+```
+
+Разрешает использовать `console.warn()` и `console.error()`
+
+##### Eqeqeq
+
+Предупреждает про использование нестрогого сравнения. Строгое сравнение безопаснее и не приводит типы автоматически.
+
+**Фрагмент настройки:**
+
+```js
+'eqeqeq': 'warn'
+```
+
+##### Curly
+
+Требует фигурные скобки даже у однострочных ветвлений.
+
+**Фрагмент настройки:**
+
+```js
+'curly': 'warn'
+```
+
+##### No-else-return
+
+Убирает лишний else.
+
+**Фрагмент настройки:**
+
+```js
+'no-else-return': 'warn'
+```
+
+##### Prefer-const
+
+Предлагает использовать const, если переменная не изменяется.
+
+**Фрагмент настройки:**
+
+```js
+'prefer-const': 'warn'
+```
+
+##### comma-dangle
+
+Требует конечную запятую (**trailing comma**) в многострочных конструкциях.
+
+**Например:**
+
+```js
+const user = {
+  name: 'Alex',
+  age: 25,
+}
+```
+
+**Фрагмент настройки:**
+
+```js
+'comma-dangle': [
+  'error',
+  {
+    arrays: 'always-multiline',
+    objects: 'always-multiline',
+    imports: 'always-multiline',
+    exports: 'always-multiline',
+    functions: 'never',
+  },
+],
+```
+
+#### Правила React
+
+##### React/jsx-uses-vars
+
+Помогает **ESLint** понимать **JSX-компоненты** как используемые переменные.
+
+Без этого **ESLint** может ошибочно считать компонент неиспользуемым.
+
+**Фрагмент настройки:**
+
+```js
+'react/jsx-uses-vars': 'error'
+```
+
+##### React/jsx-uses-react
+
+Отключено, потому что в современных версиях React импорт React для JSX больше не нужен.
+
+**Фрагмент настройки:**
+
+```js
+'react/jsx-uses-vars': 'error'
+```
+
+#### Accessibility (A11Y)
+
+##### Jsx-a11y/media-has-caption
+
+Проверяет наличие субтитров у видео и аудио.
+
+**Фрагмент настройки:**
+
+```js
+'jsx-a11y/media-has-caption': 'warn'
+```
+
+##### Jsx-a11y/no-noninteractive-tabindex
+
+Предупреждает, если **tabIndex** используется на неинтерактивных элементах.
+
+**Фрагмент настройки:**
+
+```js
+'jsx-a11y/no-noninteractive-tabindex': 'warn'
+```
+
+#### Как временно отключить правило
+
+> [!TIP]
+> Иногда нужно отключить некоторое правило во время разработки.
+> К примеру, для использования `console.log` и чтобы ошибки не отвлекали взгляд их можно на нужное время отключить
+
+**Для одной строки:**
+```js
+// eslint-disable-next-line no-console
+console.log('debug')
+```
+
+**Для блока кода:**
+```js
+/* eslint-disable no-console */
+
+console.log('debug')
+
+/* eslint-enable no-console */
+```
+
+[Список всех настроек ESLint](https://eslint.org/docs/latest/rules/?utm_source=chatgpt.com)
