@@ -1,6 +1,6 @@
-/** 
+/**
  * @see https://stylelint.io/user-guide/configure/
- * @type {import('stylelint').Config} 
+ * @type {import('stylelint').Config}
  */
 export default {
   ignoreFiles: [
@@ -74,8 +74,8 @@ export default {
       'order',
 
       /*
-        * Positioning
-      */
+       * Positioning
+       */
       'position',
       'top',
       'right',
@@ -89,8 +89,8 @@ export default {
       'overscroll-behavior',
 
       /*
-        * Layout
-      */
+       * Layout
+       */
       'display',
       'flex',
       'flex-direction',
@@ -103,7 +103,7 @@ export default {
 
       /*
        * Box model
-      */
+       */
       'width',
       'min-width',
       'max-width',
@@ -116,7 +116,7 @@ export default {
 
       /*
        * Typography
-      */
+       */
       'font',
       'font-family',
       'font-size',
@@ -130,7 +130,7 @@ export default {
 
       /*
        * Visual
-      */
+       */
       'background',
       'background-color',
       'border',
@@ -140,18 +140,18 @@ export default {
 
       /*
        * Effects
-      */
+       */
       'transition',
       'transform',
       'animation',
 
       /*
        * Misc
-      */
+       */
       'cursor',
       'pointer-events',
       'will-change',
       'overflow',
     ],
   },
-};
+}

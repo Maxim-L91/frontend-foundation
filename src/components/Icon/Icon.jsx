@@ -1,13 +1,13 @@
-import clsx from "clsx"
-import { Sprite } from "minista/assets"
-import { ICONS } from "./icons"
-import "./Icon.scss"
+import clsx from 'clsx'
+import { Sprite } from 'minista/assets'
+import { ICONS } from './icons'
+import './Icon.scss'
 
 export default (props) => {
   const {
     className,
     name,
-    color = "currentColor",
+    color = 'currentColor',
     size = 24,
     ariaLabel,
     variant,
@@ -22,30 +22,26 @@ export default (props) => {
 
   const { id: iconName } = icon
 
-  const defaultVariant = icon.variant ?? "stroke"
+  const defaultVariant = icon.variant ?? 'stroke'
   const finalVariant = variant || defaultVariant
 
-  const isFill = finalVariant === "fill"
+  const isFill = finalVariant === 'fill'
 
   return (
     <Sprite
       src={`/src/assets/icons/${iconName}.svg`}
-      className={clsx(
-        "icon", 
-        className,
-        {
-          "icon--fill": isFill,
-          "icon--stroke": !isFill,
-        }
-      )}
-      style={{ 
+      className={clsx('icon', className, {
+        'icon--fill': isFill,
+        'icon--stroke': !isFill,
+      })}
+      style={{
         color,
         width: size,
         height: size,
       }}
       aria-label={ariaLabel}
       aria-hidden={!ariaLabel}
-      role={ariaLabel ? "img" : "presentation"}
+      role={ariaLabel ? 'img' : 'presentation'}
     />
   )
-} 
+}
