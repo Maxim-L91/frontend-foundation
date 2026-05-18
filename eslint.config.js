@@ -1,6 +1,9 @@
 import js from '@eslint/js'
 import globals from 'globals'
 import { defineConfig } from 'eslint/config'
+
+import prettierPlugin from 'eslint-plugin-prettier'
+import prettierConfig from 'eslint-config-prettier'
 import babelParser from '@babel/eslint-parser'
 
 import jsxA11yPlugin from 'eslint-plugin-jsx-a11y'
@@ -34,22 +37,24 @@ const ignores = [
 const commonPlugins = {
   'jsx-a11y': jsxA11yPlugin,
   react: reactPlugin,
+  prettier: prettierPlugin,
 }
 
 /**
-  * Ещё правила для rules
-  * https://eslint.org/docs/latest/rules/
-*/
+ * Ещё правила для rules
+ * https://eslint.org/docs/latest/rules/
+ */
 const commonRules = {
   ...js.configs.recommended.rules,
   ...jsxA11yPlugin.configs.recommended.rules,
+  ...prettierConfig.rules,
 
   'react/jsx-uses-vars': 'error',
   'react/jsx-uses-react': 'off',
 
   'no-console': ['warn', { allow: ['warn', 'error'] }],
-  'eqeqeq': 'warn',
-  'curly': 'warn',
+  eqeqeq: 'warn',
+  curly: 'warn',
   'no-else-return': 'warn',
 
   'comma-dangle': [
@@ -69,10 +74,10 @@ const commonRules = {
 }
 
 export default defineConfig([
-  { 
-    files: ["**/*.{js,jsx,mjs,cjs}"],
+  {
+    files: ['**/*.{js,jsx,mjs,cjs}'],
     ignores,
-    languageOptions: { 
+    languageOptions: {
       parser: babelParser,
       parserOptions: {
         requireConfigFile: false,
@@ -90,4 +95,4 @@ export default defineConfig([
     plugins: commonPlugins,
     rules: commonRules,
   },
-]);
+])
