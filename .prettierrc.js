@@ -5,6 +5,13 @@
 export default {
   semi: false,
   singleQuote: true,
-  printWidth: 80,
   trailingComma: 'es5',
+
+  printWidth: 80,
+  tabWidth: 2,
+  useTabs: false,
+
+  endOfLine: 'lf',
+
+  proseWrap: 'preserve',
 }
