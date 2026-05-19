@@ -1,5 +1,12 @@
-import '@/styles/'
+export const metadata = {
+  title: 'Home',
+}
 
 export default () => {
-  return <></>
+  return (
+    <>
+      <h1>Hello</h1>
+      <p>My brather</p>
+    </>
+  )
 }
