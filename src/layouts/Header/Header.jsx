@@ -1,4 +1,4 @@
-import clsx from "clsx"
+import clsx from 'clsx'
 
 export default (props) => {
   const { url } = props
@@ -15,13 +15,13 @@ export default (props) => {
   ]
 
   return (
-    <header className='Header'>
+    <header className="Header">
       <div className="container">
         <nav className="header__menu">
           <ul className="header__menu-list">
             {menuItems.map(({ label, href }, index) => (
               <li className="header__menu-item" key={index}>
-                <a 
+                <a
                   className={clsx(
                     'header__menu-link',
                     href === url && 'is-active'
