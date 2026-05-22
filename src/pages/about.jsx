@@ -1,12 +1,11 @@
 export const metadata = {
-  title: 'Home',
+  title: 'About',
 }
 
 export default () => {
   return (
     <>
-      <h1>Hello</h1>
-      <p>My brather</p>
+      <h2>About page</h2>
     </>
   )
 }
