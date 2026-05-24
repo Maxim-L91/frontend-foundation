@@ -1,5 +1,5 @@
-import clsx from "clsx"
-import getIdFromTitle from "@/utils/getIdFromTitle"
+import clsx from 'clsx'
+import getIdFromTitle from '@/utils/getIdFromTitle'
 
 export default (props) => {
   const {
