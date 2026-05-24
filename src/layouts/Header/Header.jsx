@@ -1,3 +1,4 @@
+import Logo from '@/components/Logo'
 import clsx from 'clsx'
 
 export default (props) => {
@@ -17,6 +18,7 @@ export default (props) => {
   return (
     <header className="Header">
       <div className="container">
+        <Logo className="header__logo" loading="eager" />
         <nav className="header__menu">
           <ul className="header__menu-list">
             {menuItems.map(({ label, href }, index) => (
