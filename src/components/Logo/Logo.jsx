@@ -1,7 +1,7 @@
-import clsx from "clsx"
+import clsx from 'clsx'
 
 export default (props) => {
-  const { className, loading = 'lazy'} = props
+  const { className, loading = 'lazy' } = props
 
   const title = 'Home'
 
@@ -12,7 +12,7 @@ export default (props) => {
       title={title}
       aria-label={title}
     >
-      <img 
+      <img
         className="logo__image"
         src="/images/logo.svg"
         alt=""
