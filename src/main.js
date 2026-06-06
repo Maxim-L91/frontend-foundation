@@ -1,1 +1,3 @@
-console.log('Hello')
+import OverlayMenu from "@/modules/OverlayMenu";
+
+new OverlayMenu()
