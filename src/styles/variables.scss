@@ -1,3 +1,17 @@
 :root {
-  --title-color: rgb(249, 200, 200);
+  --color-black: #000000;
+
+  --border: var(--border-width-m) solid var(--color-accent);
+
+  --border-width-xl: 6px;
+  --border-width-l: 4px;
+  --border-width-m: 2px;
+  --border-width-s: 1px;
+
+  --border-radius-l: 12px;
+  --border-radius-m: 10px;
+  --border-radius: 8px;
+  --border-radius-xs: 6px;
+  --border-radius-xxs: 5px;
+  --border-radius-xxxs: 4px;
 }
