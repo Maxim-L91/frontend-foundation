@@ -14,12 +14,11 @@ export default (props) => {
       title={title}
       {...extraAttrs}
     >
-      <span 
-        className={clsx('burger-button__line', className)}
-        aria-hidden='true'
-      >
-
-      </span>
+      <div className="burger-button__wrapper">
+        <span className="top" aria-hidden='true'></span>
+        <span className="middle" aria-hidden='true'></span>
+        <span className="bottom" aria-hidden='true'></span>
+      </div>
     </button>
   )
 }
