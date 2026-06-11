@@ -1,4 +1,4 @@
-import clsx from "clsx"
+import clsx from 'clsx'
 import './BurgerButton.scss'
 
 export default (props) => {
@@ -15,9 +15,9 @@ export default (props) => {
       {...extraAttrs}
     >
       <div className="burger-button__wrapper">
-        <span className="top" aria-hidden='true'></span>
-        <span className="middle" aria-hidden='true'></span>
-        <span className="bottom" aria-hidden='true'></span>
+        <span className="top" aria-hidden="true"></span>
+        <span className="middle" aria-hidden="true"></span>
+        <span className="bottom" aria-hidden="true"></span>
       </div>
     </button>
   )

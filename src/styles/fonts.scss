@@ -1,0 +1,95 @@
+// ========= Connecting fonts for most browsers =========
+
+// Open Sans Regular
+@font-face {
+  font-family: 'Open Sans';
+  src:
+      url('../assets/fonts/Open-sans/OpenSans-Regular.woff2') format('woff2'),
+      url('../assets/fonts/Open-sans/OpenSans-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Open Sans Medium
+@font-face {
+  font-family: 'Open Sans';
+  src:
+      url('../assets/fonts/Open-sans/OpenSans-Medium.woff2') format('woff2'),
+      url('../assets/fonts/Open-sans/OpenSans-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Open Sans Bold
+@font-face {
+  font-family: 'Open Sans';
+  src:
+      url('../assets/fonts/Open-sans/OpenSans-Bold.woff2') format('woff2'),
+      url('../assets/fonts/Open-sans/OpenSans-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+// ========= Connecting fonts of all formats for full support =========
+
+// Open Sans Regular
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../assets/fonts/Open-sans/OpenSans-Regular.eot');
+  src:
+    url('../assets/fonts/Open-sans/OpenSans-Regular.eot?#iefix')
+      format('embedded-opentype'),
+    url('../assets/fonts/Open-sans/OpenSans-Regular.woff2') format('woff2'),
+    url('../assets/fonts/Open-sans/OpenSans-Regular.woff') format('woff'),
+    url('../assets/fonts/Open-sans/OpenSans-Regular.ttf') format('truetype'),
+    url('../assets/fonts/Open-sans/OpenSans-Regular.svg') format('svg');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Open Sans Medium
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../assets/fonts/Open-sans/OpenSans-Medium.eot');
+  src:
+    url('../assets/fonts/Open-sans/OpenSans-Medium.eot?#iefix')
+      format('embedded-opentype'),
+    url('../assets/fonts/Open-sans/OpenSans-Medium.woff2') format('woff2'),
+    url('../assets/fonts/Open-sans/OpenSans-Medium.woff') format('woff'),
+    url('../assets/fonts/Open-sans/OpenSans-Medium.ttf') format('truetype'),
+    url('../assets/fonts/Open-sans/OpenSans-Medium.svg') format('svg');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Open Sans Bold
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../assets/fonts/Open-sans/OpenSans-Bold.eot');
+  src:
+    url('../assets/fonts/Open-sans/OpenSans-Bold.eot?#iefix')
+      format('embedded-opentype'),
+    url('../assets/fonts/Open-sans/OpenSans-Bold.woff2') format('woff2'),
+    url('../assets/fonts/Open-sans/OpenSans-Bold.woff') format('woff'),
+    url('../assets/fonts/Open-sans/OpenSans-Bold.ttf') format('truetype'),
+    url('../assets/fonts/Open-sans/OpenSans-Bold.svg') format('svg');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+// ========= Connecting variable fonts =========
+
+// Inter
+@font-face {
+  font-family: 'Inter';
+  src: url('../assets/fonts/Inter/Inter.woff2') format('woff2');
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}

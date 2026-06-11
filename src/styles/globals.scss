@@ -3,3 +3,21 @@ html {
     overflow: hidden;
   }
 }
+
+body {
+  font-family: var(--font-family-base), sans-serif;
+  font-weight: 400;
+}
+
+h1 {
+  font-weight: 600;
+}
+
+.fonts-secondary {
+  font-family: var(--font-family-secondary), sans-serif;
+  font-weight: 400;
+}
+
+.title {
+  font-weight: 700;
+}
