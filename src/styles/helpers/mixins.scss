@@ -1,3 +1,9 @@
+@use 'functions' as *;
+
+@mixin fluid-text($max: 48, $min: 16) {
+  font-size: fluid($max, $min);
+}
+
 @mixin flex-center($isInline: false) {
   @if $isInline {
     display: inline-flex;
@@ -12,4 +18,10 @@
 @mixin square($size) {
   width: $size;
   height: $size;
+}
+
+@mixin focus-visible {
+  outline: 2px dashed var(--color-white);
+  outline-offset: 4px;
+  transition-duration: 0s !important;
 }
