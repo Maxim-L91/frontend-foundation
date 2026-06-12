@@ -1,5 +1,8 @@
 :root {
   --color-black: #000000;
+  --color-white: #ffffff;
+  --color-gray: #cfcece;
+  --color-accent: #e50000;
 
   --border: var(--border-width-m) solid var(--color-accent);
 
@@ -17,4 +20,9 @@
 
   --font-family-base: 'Inter';
   --font-family-secondary: 'Open Sans';
+
+  --container-width: #{$container-desctop-width};
+  --container-padding-x: 16px;
+
+  --transition-duration: 0.2s;
 }

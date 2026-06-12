@@ -5,19 +5,31 @@ html {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   font-family: var(--font-family-base), sans-serif;
-  font-weight: 400;
+  color: var(--color-white);
+  background-color: var(--color-gray);
 }
 
-h1 {
-  font-weight: 600;
+a,
+button,
+label,
+input,
+textarea,
+select,
+svg * {
+  transition-duration: var(--transition-duration);
 }
 
-.fonts-secondary {
-  font-family: var(--font-family-secondary), sans-serif;
-  font-weight: 400;
-}
+a {
+  color: inherit;
 
-.title {
-  font-weight: 700;
+  @include hover {
+    color: var(--color-accent)
+  }
+
+  &[class] {
+    text-decoration: none;
+  }
 }
