@@ -5,7 +5,7 @@ export const metadata = {
 export default () => {
   return (
     <>
-      <h2>About page</h2>
+
     </>
   )
 }
