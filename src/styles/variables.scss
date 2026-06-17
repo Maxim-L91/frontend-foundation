@@ -21,7 +21,10 @@
   --font-family-base: 'Inter';
   --font-family-secondary: 'Open Sans';
 
-  --container-width: #{$container-desctop-width};
+  --container-width: #{fluid-to-laptop(
+      $container-desctop-width,
+      $container-laptop-width
+    )};
   --container-padding-x: 16px;
 
   --transition-duration: 0.2s;
