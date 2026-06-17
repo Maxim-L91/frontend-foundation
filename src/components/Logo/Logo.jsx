@@ -1,4 +1,5 @@
 import clsx from 'clsx'
+import './Logo.scss'
 
 export default (props) => {
   const { className, loading = 'lazy' } = props

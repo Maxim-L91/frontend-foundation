@@ -1,6 +1,6 @@
 import './Header.scss'
 import clsx from 'clsx'
-import Logo from "@/components/Logo"
+import Logo from '@/components/Logo'
 
 export default (props) => {
   const { url } = props
@@ -20,10 +20,10 @@ export default (props) => {
           <ul className="header__menu-list">
             {menuItems.map(({ label, href }) => (
               <li className="header__menu-item">
-                <a 
+                <a
                   className={clsx(
                     'header__menu-link',
-                    href === url && 'is-active',
+                    href === url && 'is-active'
                   )}
                   href={href}
                 >
