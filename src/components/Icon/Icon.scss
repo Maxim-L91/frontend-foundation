@@ -1,13 +1,23 @@
 .icon {
-  display: inline-block;
+  --iconSize: 22px;
+  
+  @include square(var(--iconSize));
 
-  &--fill {
-    fill: currentColor;
-    stroke: none;
-  }
+  display: inline-flex;
+  color: inherit;
 
-  &--stroke {
+  svg {
+    width: 100%;
+    height: 100%;
+
     fill: none;
     stroke: currentColor;
+  }
+
+  &--fill {
+    svg {
+      fill: currentColor;
+      stroke: none;
+    }
   }
 }
