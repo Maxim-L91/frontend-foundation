@@ -3,9 +3,5 @@ export const metadata = {
 }
 
 export default () => {
-  return (
-    <>
-
-    </>
-  )
+  return <></>
 }
