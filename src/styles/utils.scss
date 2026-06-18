@@ -5,21 +5,30 @@
   padding-inline: var(--container-padding-x);
 }
 
-@mixin visually-hidden {
-  position: absolute !important;
-  overflow: hidden !important;
-  width: 1px !important;
-  height: 1px !important;
-  margin: -1px !important;
-  padding: 0 !important;
-  white-space: nowrap !important;
-  border: 0 !important;
-  clip: rect(0 0 0 0) !important;
-  clip-path: inset(100%) !important;
+.visually-hidden  {
+  @include visually-hidden;
 }
 
-@mixin focus-visible {
-  outline: 2px dashed var(--color-white);
-  outline-offset: 4px;
-  transition-duration: 0s !important;
+.visible-tablet {
+  @include tablet-above {
+    display: none !important;
+  }
+}
+
+.hidden-tablet {
+  @include tablet {
+    display: none !important;
+  }
+}
+
+.visible-mobile {
+  @include mobile-above {
+    display: none !important;
+  }
+}
+
+.hidden-mobile {
+  @include mobile {
+    display: none !important;
+  }
 }
