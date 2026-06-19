@@ -4,6 +4,11 @@
   font-size: fluid($max, $min);
 }
 
+@mixin hide {
+  visibility: hidden;
+  opacity: 0;
+}
+
 @mixin flex-center($isInline: false) {
   @if $isInline {
     display: inline-flex;
