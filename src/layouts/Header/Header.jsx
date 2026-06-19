@@ -1,6 +1,7 @@
 import './Header.scss'
 import clsx from 'clsx'
 import Logo from '@/components/Logo'
+import BurgerButton from '@/components/BurgerButton'
 
 export default (props) => {
   const { url } = props
@@ -13,10 +14,10 @@ export default (props) => {
   ]
 
   return (
-    <header className="header">
+    <header className="header" data-js-overlay-menu="">
       <div className="header__inner container">
         <Logo className="header__logo" />
-        <nav className="header__menu">
+        <nav className="header__menu" data-js-mobile-menu-overlay="">
           <ul className="header__menu-list">
             {menuItems.map(({ label, href }) => (
               <li className="header__menu-item">
@@ -33,6 +34,10 @@ export default (props) => {
             ))}
           </ul>
         </nav>
+        <BurgerButton 
+          className="header__burger-button visible-mobile" 
+          extraAttrs = {{ 'data-js-overlay-menu-burger-button': '', }}
+        />
       </div>
     </header>
   )

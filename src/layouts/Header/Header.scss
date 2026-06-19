@@ -3,41 +3,53 @@
   background-color: var(--color-gray);
 
   &__inner {
-    display: grid;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    grid-template-columns: 1fr auto 1fr;
-    column-gap: 16px;
-
-    @include tablet {
-      display: flex;
-      justify-content: space-between;
-    }
+    column-gap: 30px;
   }
 
   &__menu {
-    @include tablet {
-      overflow-y: auto;
+    @include mobile {
+      position: fixed;
+      z-index: var(--layer-mobile-menu);
+      inset: 0;
       display: flex;
+      flex-direction: column;
       justify-content: center;
-      height: 100%;
-      border-radius: 0;
+      background-color: var(--color-white);
+      transition-duration: var(--transition-duration);
+
+      &:not(.is-active) {
+        @include hide;
+      }
     }
 
     &-list {
       display: flex;
       align-items: center;
-      column-gap: 6px;
+      column-gap: 60px;
 
       @include tablet {
+        column-gap: 30px;
+      }
+
+      @include mobile {
         flex-direction: column;
-        row-gap: 16px;
-        margin-block: auto;
+        row-gap: 10px;
+        overflow-y: auto;
+        padding-block: 30px;
       }
     }
 
     &-link {
-      padding: 14px 20px;
-      color: var(--color-white);
+      display: inline-flex;
+      align-items: center;
+      height: 44px;
+
+      @include mobile {
+        color: var(--color-black);
+      }
 
       &.is-active {
         text-decoration: underline;
@@ -46,6 +58,6 @@
   }
 
   &__burger-button {
-    position: relative;
+    z-index: var(--layer-mobile-menu);
   }
 }
